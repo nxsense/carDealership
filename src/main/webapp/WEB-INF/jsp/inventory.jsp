@@ -80,6 +80,7 @@
 						<th scope="col">Price</th>
 						<th scope="col">Dealer Date of Purchase</th>
 						<th scope="col">Description</th>
+						<th scope="col">Link</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -94,6 +95,7 @@
 							<td>${vehicle.price}</td>
 							<td>${vehicle.dopDealer}</td>
 							<td>${vehicle.carDescription}</td>
+							<td><button>Details</button></td>
 						</tr>
 
 

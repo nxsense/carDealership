@@ -24,12 +24,20 @@ public class VehicleService {
 	public List<Vehicle> getVehicles(){
 		return vehicleRepository.findAll();
 	}
-	//displayAllVehicles >120 days idle time
-		//create this query/method in VehicleRepository Class
-
+	
+	//TODO displayAllVehicles >120 days idle time
+	//create this query/method in VehicleRepository Class
+	public List<Vehicle> getIdleVehicles(){
+		return vehicleRepository.findAllIdle();
+	}
 
 	public List<Vehicle> getVehiclesByModel(String modelType) {
 		// TODO Auto-generated method stub
 		return vehicleRepository.getVehiclesByModel(modelType);
+	}
+	
+	public Vehicle getVehicleById(String vin) {
+		//TODO add query in vehicleRepository
+		return vehicleRepository.findById(vin).get();
 	}
 }

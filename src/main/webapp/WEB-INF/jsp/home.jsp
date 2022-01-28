@@ -66,6 +66,7 @@
 	<p class = "lead">Welcome back ${loggedInStudent.firstName}
 		${loggedInStudent.lastName}! </p>
 -->
+	<img src = "dealershipPhoto.jpg" alt="car dealership photo">
 	</main>
 
 	<footer class="mastfoot mt-auto">

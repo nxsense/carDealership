@@ -1,5 +1,9 @@
 package com.claim.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -74,7 +78,22 @@ public class VehicleController {
 	
 	
 	//TODO if vehicle in inventory >120 days, user can bid and at max 10% discount
-	
+	@GetMapping("/bid")
+	public String handleDisplayAllIdle(Model model) throws ParseException	{
+		List<Vehicle> allVehicles = vehicleService.getVehicles();
+		List<Vehicle> idleVehicles = new ArrayList<Vehicle>();
+		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+		Date d = sdformat.parse("2021-12-30");
+		
+		for (Vehicle temp : allVehicles) {
+			if (temp.getDopDealer().before(d)) {
+				System.out.println(temp);
+				idleVehicles.add(temp);
+			}
+		}
+		model.addAttribute("vehicles", idleVehicles);
+		return "bid";
+	}
 	
 	//TODO sell car functionality: should remove from available inventory
 	

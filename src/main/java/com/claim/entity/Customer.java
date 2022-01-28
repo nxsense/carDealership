@@ -1,8 +1,15 @@
 package com.claim.entity;
 
 import java.util.Date;
+import java.util.Optional;
+
 import javax.persistence.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.claim.entity.Vehicle;
+import com.claim.repository.VehicleRepository;
+import com.claim.service.*;
 /*
  * CREATE TABLE customer (
 customer_id int NOT NULL AUTO_INCREMENT,
@@ -20,13 +27,17 @@ FOREIGN KEY (vin) REFERENCES vehicle(vin)
 @Entity
 @Table(name = "customer")
 public class Customer {
-
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
 	@Column(name = "customer_id")
 	private int customerId;
 	
+	//@OneToOne(cascade=CascadeType.ALL)
+	//@JoinColumn(name = "vin")
+	//private Vehicle vehicle;
+	
 	@Column(name = "vin")
-	private String vehicleId;
+	private static String vehicleId;
 	
 	@Column(name = "dop_buyer")
 	private Date dopBuyer;
@@ -43,6 +54,9 @@ public class Customer {
 	@Column(name = "phone_number")
 	private String phoneNumber;
 
+	//dependency injection
+	//	@Autowired
+	//	VehicleRepository vehicleRepository;
 	
 	public Customer() {
 		
@@ -56,7 +70,7 @@ public class Customer {
 		this.customerId = customerId;
 	}
 
-	public String getVehicleId() {
+	public static String getVehicleId() {
 		return vehicleId;
 	}
 
@@ -104,5 +118,8 @@ public class Customer {
 		this.phoneNumber = phoneNumber;
 	}
 	
+//	public Optional<Vehicle> getCustomerVehicle() {
+//		return vehicleRepository.findById(Customer.getVehicleId());
+//	}
 	
 }
