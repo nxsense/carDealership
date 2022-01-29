@@ -84,21 +84,18 @@
 				<tbody>
 					<c:forEach items="${vehicles}" var="vehicle">
 						<!--use java field names from vehicle.java -->
-
+					<c:set var="fmtPrice" value="${vehicle.price}"/>
+					<c:set var="odoMiles" value="${vehicle.odometer }"/>
 						<tr>
 							<td>${vehicle.vin}</td>
 							<td>${vehicle.manufacturerName}</td>
 							<td>${vehicle.model}</td>
-							<td>${vehicle.odometer}</td>
-							<td>${vehicle.price}</td>
+							<td><fmt:formatNumber value="${odoMiles}" type="number" groupingUsed="true"/></td>
+							<td><fmt:formatNumber value="${fmtPrice}" type="currency" /></td>
 							<td>${vehicle.dopDealer}</td>
 							<td>${vehicle.carDescription}</td>
 							<td><button>Details</button></td>
 						</tr>
-
-
-
-
 					</c:forEach>
 				</tbody>
 			</table> 

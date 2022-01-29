@@ -38,14 +38,10 @@ public class VehicleController {
 	@GetMapping("/inventory")
 	public String handleDisplayAll(Model model)	{
 		List<Vehicle> vehicles = vehicleService.getVehicles();
-		//for(Vehicle temp : vehicles) {
-		//	System.out.println(temp);
-		//}
 		model.addAttribute("vehicles", vehicles);
 		return "inventory";
 	}
-	
-	
+		
 	//TODO display vehicle details
 	
 	//TODO add a new vehicle to the inventory @GetMapping
@@ -77,17 +73,22 @@ public class VehicleController {
 	}
 	
 	
-	//TODO if vehicle in inventory >120 days, user can bid and at max 10% discount
+	// TODO if vehicle in inventory >120 days, user can bid and at max 10% discount
 	@GetMapping("/bid")
-	public String handleDisplayAllIdle(Model model) throws ParseException	{
+	public String handleDisplayAllIdle(Model model) throws ParseException {
 		List<Vehicle> allVehicles = vehicleService.getVehicles();
 		List<Vehicle> idleVehicles = new ArrayList<Vehicle>();
 		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = sdformat.parse("2021-12-30");
-		
+		double discountedPrice = 0;
+		// date comparison
 		for (Vehicle temp : allVehicles) {
 			if (temp.getDopDealer().before(d)) {
 				System.out.println(temp);
+				// modify price
+				discountedPrice = temp.getPrice() * 0.9;
+				// set discounted price and add to idleVehicle list
+				temp.setPrice(discountedPrice);
 				idleVehicles.add(temp);
 			}
 		}
