@@ -33,6 +33,7 @@ public class VehicleService {
 
 	public List<Vehicle> getVehiclesByModel(String modelType) {
 		// TODO Auto-generated method stub
+		System.out.println("I'm searching for a " + modelType);
 		return vehicleRepository.getVehiclesByModel(modelType);
 	}
 	
