@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.claim.entity.Customer;
+import com.claim.entity.Vehicle;
 import com.claim.service.CustomerService;
 
 
@@ -24,10 +25,24 @@ public class CustomerController {
 		 * //TODO	
 		 * 
 		 */
+		// TODO add a new customer to the customer table
 		@GetMapping("/saveCustomer")
-		public String welcome(Model model) {
+		public ModelAndView addNewCustomer(Model model) {
+			System.out.println("getmapping add new CUSTOMER fired");
+			return new ModelAndView("saveCustomer", "customer", new Customer());
+		}
+
+		// TODO add a new customer to the customer table @post
+		@PostMapping("/saveCustomer")
+		public String handleAddNewCustomer(Model model, @ModelAttribute("customer") Customer customer, HttpSession session) {
+			System.out.println("postmapping add new customer fired");
+			model.addAttribute("newCustomer", customer);
+			customerService.saveCustomer(customer);
+		
+			// possibly redirect to a inventoryUpdated.jsp or form of thank-you/notification
 			return "thank-you";
 		}
+		
 		
 		@GetMapping("/transactions")
 		public String handlePurchased(Model model)	{
@@ -49,6 +64,9 @@ public class CustomerController {
 		
 		@PostMapping("/newCustomer")
 		public String registerCustomer(Model model, @ModelAttribute Customer customer, HttpSession session) {
+			//no longer need this now that save functionality "handleAddNewCustomer"
+			//has been implemented
+			
 			return "thank-you";
 		}
 }

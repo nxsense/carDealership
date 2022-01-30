@@ -62,12 +62,12 @@
 			<!--  USER REGISTRATION FORM -->
 			<div class="col-md-7 col-lg-8">
 				<h4 class="mb-3">Customer Details</h4>
-				<form class="needs-validation" action="/newCustomer" method="post" novalidate>
+				<form class="needs-validation" action="/saveCustomer" method="post" novalidate>
 					<div class="row g-3">
 						<div class="col-sm-6">
 							<label for="firstName" class="form-label">First name</label> <input
 								type="text" class="form-control" id="firstName" placeholder=""
-								value="" required>
+								value="" required name="firstName">
 							<div class="invalid-feedback">Valid first name is required.
 							</div>
 						</div>
@@ -75,14 +75,14 @@
 					<div class="col-sm-6">
 						<label for="lastName" class="form-label">Last name</label> <input
 							type="text" class="form-control" id="lastName" placeholder=""
-							value="" required>
+							value="" required name="lastName">
 						<div class="invalid-feedback">Valid last name is required.</div>
 					</div>
 					
 					<div class="col-sm-6">
 						<label for="phoneNumber" class="form-label">Phone number</label> <input
 							type="text" class="form-control" id="phoneNumber" placeholder=""
-							value="" required>
+							value="" required name="phoneNumber">
 						<div class="invalid-feedback">Valid phone number is required.</div>
 					</div>
 					<button class="w-100 btn btn-primary btn-lg" type="submit">Register</button>

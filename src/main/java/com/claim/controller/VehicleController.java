@@ -109,14 +109,16 @@ public class VehicleController {
 
 	
 	@PostMapping("/searchByModel")
-	public String handleSearchByModel(Model model, @ModelAttribute("vehicle") Vehicle vehicle, HttpSession session) {
-//		Vehicle v = new Vehicle();
+//	public String handleSearchByModel(Model model, @ModelAttribute("vehicle") Vehicle vehicle, HttpSession session) {
+	public String handleSearchByModel(Model model, @ModelAttribute("searchByModel") Vehicle vehicle, HttpSession session) {
+		//		Vehicle v = new Vehicle();
 //		v = (Vehicle) session.getAttribute("vehicle");
 //		System.out.println(v.getModel());
 //		
-//		
-//		String vm = (String) session.getAttribute("vehicleModel");
-//		System.out.println(vm);
+		System.out.println("I'm at line 118");
+		String vm = (String) session.getAttribute("model");
+		System.out.println(vm);
+		vehicle.setModel(vm);
 //		//vehicle = (Vehicle) session.getAttribute("vehicleModel");
 //		System.out.println(vehicle.getModel());
 //		//vehicle.setModel(null);
