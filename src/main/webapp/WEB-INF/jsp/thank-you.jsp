@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Home</title>
+<title>Success</title>
 
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.4/examples/cover/">
@@ -44,7 +44,6 @@
 	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 <header class="masthead mb-auto">
 	<div class="inner">
-		<h3 class="masthead-brand">Thank you</h3>
 		<nav class="nav nav-masthead justify-content-center">
 			<a class="nav-link active" href="/home">Home</a> 
 			<a class="nav-link" href="/inventory">Inventory</a> 
@@ -62,16 +61,20 @@
 	<p class = "lead">Welcome back ${loggedInStudent.firstName}
 		${loggedInStudent.lastName}! </p>
 -->
+
+	<h1 class="cover-heading">Registration Successful</h1>
+	
 	</main>
 
-	<footer class="mastfoot mt-auto">
-		<div class="inner">
-			<p>
-				Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>,
-				by <a href="https://twitter.com/mdo">@mdo</a>.
-			</p>
-		</div>
-	</footer>
+		<footer class="my-5 pt-5 text-muted text-center text-small">
+			<div class="inner">
+				   <p class="mb-1">&copy; 2022 POJO's Vehicles</p>
+				<p>
+					Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>,
+					by <a href="https://twitter.com/mdo">@mdo</a>.
+				</p>
+			</div>
+		</footer>
 	</div>
 
 

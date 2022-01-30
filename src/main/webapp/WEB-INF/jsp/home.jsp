@@ -55,6 +55,7 @@
 			<a class="nav-link" href="/inventory">Inventory</a> 
 			<a class="nav-link" href="/bid">Bid</a> 
 			<a class="nav-link" href="/transactions">Transactions</a>
+			<a class="nav-link" href="/newCustomer">New Customer?</a>
 		</nav>
 	</div>
 </header>
