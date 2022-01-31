@@ -120,5 +120,6 @@ public class VehicleController {
 	// TODO sell car functionality: should remove from available inventory
 
 	// TODO bonus: add new car to inventory including photo
-
+	
+	
 }

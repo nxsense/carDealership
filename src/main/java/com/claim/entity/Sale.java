@@ -20,18 +20,44 @@ public class Sale {
 	@Column(name="isDiscounted")
 	private boolean isDiscounted;
 	
+	
 	//FK into table customer
 	//relationship annotation
-	@Column(name="customer_ID")
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="customer_ID")
+	private Customer c;
+	
 	private int custId;
 	
 	//FK into table vehicle
 	//relationship annotation
-	@Column(name="vehicle_ID")
-	private String vehicleId;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="vehicle_ID")
+	private Vehicle v;
 	
-	
+
 	public Sale() {	}
+
+	
+	public Customer getC() {
+		return c;
+	}
+
+
+	public void setC(Customer c) {
+		this.c = c;
+	}
+
+
+	public Vehicle getV() {
+		return v;
+	}
+
+
+	public void setV(Vehicle v) {
+		this.v = v;
+	}
+
 
 	public String getTimeOfSale() {
 		return timeOfSale;
@@ -73,13 +99,4 @@ public class Sale {
 		this.custId = custId;
 	}
 
-	public String getVehicleId() {
-		return vehicleId;
-	}
-
-	public void setVehicleId(String vehicleId) {
-		this.vehicleId = vehicleId;
-	}
-	
-	
 }
