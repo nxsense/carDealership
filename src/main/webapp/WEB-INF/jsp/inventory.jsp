@@ -57,9 +57,9 @@
 			</div>
 			<div class="d-flex align-items-center">
 				<form action="/searchByModel" method="post"
-						modelAttribute="vehicle" class="w-100 me-3"
+						class="w-100 me-3"
 					wtx-context="28EEEB93-0A9C-49BC-838C-F4F0D31D8E44">
-					<input type="text" name="vehicleModel" class="form-control"
+					<input type="text" name="model" class="form-control"
 						placeholder="Search by model" aria-label="Search"
 						wtx-context="8D23906F-2D78-44AE-88D3-15EF6C68593A"> 
 					<a	href="/searchByModel"><button type="submit"

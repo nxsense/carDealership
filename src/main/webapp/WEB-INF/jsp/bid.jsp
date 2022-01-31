@@ -56,8 +56,11 @@
 				</nav>
 			</div>
 			<div class="d-flex align-items-center">
-        <form class="w-100 me-3" wtx-context="28EEEB93-0A9C-49BC-838C-F4F0D31D8E44">
-          <input type="search" name="${model}" class="form-control" placeholder="Search by model" aria-label="Search" wtx-context="8D23906F-2D78-44AE-88D3-15EF6C68593A">
+        <form class="w-100 me-3" action="/searchByModel" method="get" wtx-context="28EEEB93-0A9C-49BC-838C-F4F0D31D8E44">
+          <input type="search" name="model" class="form-control" placeholder="Search by model" aria-label="Search" wtx-context="8D23906F-2D78-44AE-88D3-15EF6C68593A">
+        		<a	href="/searchByModel"><button type="submit"
+				class="btn btn-primary">Search</button></a>
+				
         </form>
       </div>
 		</header>
@@ -94,7 +97,7 @@
 							<td><fmt:formatNumber value="${fmtPrice}" type="currency" /></td>
 							<td>${vehicle.dopDealer}</td>
 							<td>${vehicle.carDescription}</td>
-							<td><button>Details</button></td>
+							<td><a href="/makeBid"><button type="submit">Bid</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -63,21 +63,6 @@ public class VehicleController {
 		return "addVehicle";
 	}
 
-	// TODO search for a type "model" of vehicle from the inventory
-	
-//	@PostMapping("/inventory")
-//	public String handleFindByModel(Model model, @ModelAttribute("vehicle") Vehicle vehicle, HttpSession session) {
-//		System.out.println("another way I tried to find results by model");
-//		List<Vehicle> vehiclesByModel = vehicleService.getVehiclesByModel(vehicle.getModel());
-//		for (Vehicle temp : vehiclesByModel) {
-//			System.out.println(temp);
-//		}
-//		model.addAttribute(vehiclesByModel);
-//		return "inventory";
-//	}
-//	
-	 
-
 	// TODO if vehicle in inventory >120 days, user can bid and at max 10% discount
 	@GetMapping("/bid")
 	public String handleDisplayAllIdle(Model model) throws ParseException {
@@ -89,7 +74,7 @@ public class VehicleController {
 		// date comparison
 		for (Vehicle temp : allVehicles) {
 			if (temp.getDopDealer().before(d)) {
-				System.out.println(temp);
+				//System.out.println(temp);
 				// modify price
 				discountedPrice = temp.getPrice() * 0.9;
 				// set discounted price and add to idleVehicle list
@@ -101,6 +86,7 @@ public class VehicleController {
 		return "bid";
 	}
 
+	// TODO search for a type "model" of vehicle from the inventory
 	@GetMapping("/searchByModel")
 	public ModelAndView searchByModel(Model model) {
 		System.out.println("getmapping searchByModel fired");
@@ -108,21 +94,15 @@ public class VehicleController {
 	}
 
 	
+
 	@PostMapping("/searchByModel")
-//	public String handleSearchByModel(Model model, @ModelAttribute("vehicle") Vehicle vehicle, HttpSession session) {
-	public String handleSearchByModel(Model model, @ModelAttribute("searchByModel") Vehicle vehicle, HttpSession session) {
-		//		Vehicle v = new Vehicle();
-//		v = (Vehicle) session.getAttribute("vehicle");
-//		System.out.println(v.getModel());
-//		
-		System.out.println("I'm at line 118");
-		String vm = (String) session.getAttribute("model");
-		System.out.println(vm);
-		vehicle.setModel(vm);
-//		//vehicle = (Vehicle) session.getAttribute("vehicleModel");
-//		System.out.println(vehicle.getModel());
-//		//vehicle.setModel(null);
+	public String handleSearchByModel(Model model, @ModelAttribute("vehicle") Vehicle vehicle, HttpSession session) {
+
+		System.out.println(vehicle.getModel());
+		vehicle.setModel(vehicle.getModel());
 		List<Vehicle> modelQuery = vehicleService.getVehiclesByModel(vehicle.getModel());
+		System.out.println(modelQuery.size());
+		
 		if (!modelQuery.isEmpty()) {
 			for (Vehicle temp : modelQuery) {
 				System.out.println(temp);
