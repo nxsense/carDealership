@@ -24,3 +24,7 @@ This application is targeted at showcasing my ability to use Spring MVC and Java
 - __Uses MySQL__
 
 ![MySQL](https://github.com/snTammy/spring-mvc1/blob/main/src/main/mySQL.PNG)
+
+- __Utilized ERD__
+
+![ERD](https://github.com/snTammy/spring-mvc1/blob/main/src/main/ERD.PNG)
