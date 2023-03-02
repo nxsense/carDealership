@@ -49,14 +49,6 @@ public class Vehicle {
 	public Vehicle() {
 		
 	}
-	
-	/*
-	 * public String getImgPathName() { return imgPathName; }
-	 * 
-	 * 
-	 * public void setImgPathName(String imgPathName) { imgPathName =
-	 * "/spring-mvc1/src/main/resources/images/"; this.imgPathName = imgPathName; }
-	 */
 
 	public String getVin() {
 		return vin;

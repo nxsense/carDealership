@@ -45,10 +45,10 @@
 <header class="masthead mb-auto">
 	<div class="inner">
 		<nav class="nav nav-masthead justify-content-center">
-			<a class="nav-link active" href="/home">Home</a> 
-			<a class="nav-link" href="/inventory">Inventory</a> 
-			<a class="nav-link" href="/bid">Bid</a> 
-			<a class="nav-link" href="/transactions">Transactions</a>
+			<a class="nav-link active" href="${pageContext.request.contextPath}/home">Home</a>
+			<a class="nav-link" href="${pageContext.request.contextPath}/inventory">Inventory</a>
+			<a class="nav-link" href="${pageContext.request.contextPath}/bid">Bid</a>
+			<a class="nav-link" href="${pageContext.request.contextPath}/transactions">Transactions</a>
 		</nav>
 	</div>
 </header>
@@ -66,15 +66,6 @@
 	
 	</main>
 
-		<footer class="my-5 pt-5 text-muted text-center text-small">
-			<div class="inner">
-				   <p class="mb-1">&copy; 2022 POJO's Vehicles</p>
-				<p>
-					Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>,
-					by <a href="https://twitter.com/mdo">@mdo</a>.
-				</p>
-			</div>
-		</footer>
 	</div>
 
 

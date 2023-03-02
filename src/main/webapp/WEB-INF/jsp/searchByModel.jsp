@@ -49,19 +49,19 @@
 			<div class="inner">
 				<h3 class="masthead-brand">POJO's Dealership Inventory</h3>
 				<nav class="nav nav-masthead justify-content-center">
-					<a class="nav-link active" href="/home">Home</a> <a
-						class="nav-link" href="/inventory">Inventory</a> <a
-						class="nav-link" href="/bid">Bid</a> <a class="nav-link"
-						href="/transactions">Transactions</a>
+					<a class="nav-link active" href="${pageContext.request.contextPath}/home">Home</a> <a
+						class="nav-link" href="${pageContext.request.contextPath}/inventory">Inventory</a> <a
+						class="nav-link" href="${pageContext.request.contextPath}/bid">Bid</a> <a class="nav-link"
+						href="${pageContext.request.contextPath}/transactions">Transactions</a>
 				</nav>
 			</div>
 			<div class="d-flex align-items-center">
-				<form class="w-100 me-3"  action="/searchByModel" method="get"
+				<form class="w-100 me-3"  action="${pageContext.request.contextPath}/searchByModel" method="get"
 					wtx-context="28EEEB93-0A9C-49BC-838C-F4F0D31D8E44">
 					<input type="search" name="vehicle" class="form-control"
 						placeholder="Search by model" aria-label="Search"
 						wtx-context="8D23906F-2D78-44AE-88D3-15EF6C68593A">
-				<a href="/searchByModel"><button type="button" class="btn btn-default">Search</button></a>
+				<a href="${pageContext.request.contextPath}/searchByModel"><button type="button" class="btn btn-default">Search</button></a>
 				</form>
 			</div>
 		</header>
@@ -70,7 +70,7 @@
 
 			<h2 class="cover-heading">Vehicle Inventory</h2>
 			<div class="d-grid gap-2">
-				<a href="/addVehicle"><button type="submit" formtarget="_blank"
+				<a href="${pageContext.request.contextPath}/addVehicle"><button type="submit" formtarget="_blank"
 						class="btn btn-primary">Add to Inventory</button> </a>
 			</div>
 
@@ -111,14 +111,6 @@
 
 		</main>
 
-		<footer class="mastfoot mt-auto">
-			<div class="inner">
-				<p>
-					Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>,
-					by <a href="https://twitter.com/mdo">@mdo</a>.
-				</p>
-			</div>
-		</footer>
 	</div>
 
 

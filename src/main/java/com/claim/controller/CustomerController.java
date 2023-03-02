@@ -21,35 +21,21 @@ public class CustomerController {
 	//dependency injection
 		@Autowired
 		CustomerService customerService;
-		/*
-		 * //TODO	
-		 * 
-		 */
-		// TODO add a new customer to the customer table
 		@GetMapping("/saveCustomer")
 		public ModelAndView addNewCustomer(Model model) {
 			System.out.println("getmapping add new CUSTOMER fired");
 			return new ModelAndView("saveCustomer", "customer", new Customer());
 		}
 
-		// TODO add a new customer to the customer table @post
 		@PostMapping("/saveCustomer")
 		public String handleAddNewCustomer(Model model, @ModelAttribute("customer") Customer customer, HttpSession session) {
 			System.out.println("postmapping add new customer fired");
 			model.addAttribute("newCustomer", customer);
 			customerService.saveCustomer(customer);
-		
-			// possibly redirect to a inventoryUpdated.jsp or form of thank-you/notification
+
 			return "thank-you";
 		}
-		
-		
-		@GetMapping("/transactions")
-		public String handlePurchased(Model model)	{
-		//	List<Vehicle> vehicles = vehicleService.findAll();
-		//	model.addAttribute("vehicles", vehicles);
-			return " ";
-		}
+
 		
 		/*
 		 * When user tries to purchase or bid on a vehicle this servlet
@@ -64,9 +50,6 @@ public class CustomerController {
 		
 		@PostMapping("/newCustomer")
 		public String registerCustomer(Model model, @ModelAttribute Customer customer, HttpSession session) {
-			//no longer need this now that save functionality "handleAddNewCustomer"
-			//has been implemented
-			
 			return "thank-you";
 		}
 }

@@ -43,27 +43,20 @@ public class VehicleController {
 		return "inventory";
 	}
 
-	// TODO display vehicle details
-
-	// TODO add a new vehicle to the inventory @GetMapping
 	@GetMapping("/addVehicle")
 	public ModelAndView addNewVehicle(Model model) {
 		System.out.println("getmapping add new vehicle fired");
 		return new ModelAndView("addVehicle", "vehicle", new Vehicle());
 	}
 
-	// TODO add a new vehicle to the inventory @PostMapping
 	@PostMapping("/addVehicle")
 	public String handleAddNewVehicle(Model model, @ModelAttribute("vehicle") Vehicle vehicle, HttpSession session) {
 		System.out.println("postmapping add new vehicle fired");
 		model.addAttribute("newVehicle", vehicle);
 		vehicleService.saveVehicle(vehicle);
-		// possibly redirect to a inventoryUpdated.jsp or form of thank-you/notification
-		// or add a label to show add confirmation
 		return "addVehicle";
 	}
 
-	// TODO if vehicle in inventory >120 days, user can bid and at max 10% discount
 	@GetMapping("/bid")
 	public String handleDisplayAllIdle(Model model) throws ParseException {
 		List<Vehicle> allVehicles = vehicleService.getVehicles();
@@ -71,13 +64,10 @@ public class VehicleController {
 		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = sdformat.parse("2021-12-30");
 		double discountedPrice = 0;
-		// date comparison
+
 		for (Vehicle temp : allVehicles) {
 			if (temp.getDopDealer().before(d)) {
-				//System.out.println(temp);
-				// modify price
 				discountedPrice = temp.getPrice() * 0.9;
-				// set discounted price and add to idleVehicle list
 				temp.setPrice(discountedPrice);
 				idleVehicles.add(temp);
 			}
@@ -86,7 +76,6 @@ public class VehicleController {
 		return "bid";
 	}
 
-	// TODO search for a type "model" of vehicle from the inventory
 	@GetMapping("/searchByModel")
 	public ModelAndView searchByModel(Model model) {
 		System.out.println("getmapping searchByModel fired");
@@ -115,11 +104,6 @@ public class VehicleController {
 		}
 
 	}
-	 
 
-	// TODO sell car functionality: should remove from available inventory
-
-	// TODO bonus: add new car to inventory including photo
-	
 	
 }

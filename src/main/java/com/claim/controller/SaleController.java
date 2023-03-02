@@ -17,21 +17,12 @@ public class SaleController {
 
 	//dependency injection
 	SaleService saleService;
-	
-	
-	//TODO GetMapping for handling the display of all sales
-	
-	
-	//TODO GetMapping for making a purchase on a vehicle
-	//TODO PostMapping for displaying results of vehicle purchase
-	
-	//TODO GetMapping for making a bid on a vehicle
+
 	@GetMapping("/makeBid")
 	public ModelAndView displayBidForm(Model model) {
 		return new ModelAndView("makeBid", "sale", new Sale());
 	}
-	
-	//TODO PostMapping for displaying results of making a bid on a vehicle
+
 	@PostMapping("/makeBid")
 	public String handleMakeBid(Model model, @ModelAttribute("sale") Sale bid, HttpSession session) {
 		System.out.println("I'm attempting to make a bid");

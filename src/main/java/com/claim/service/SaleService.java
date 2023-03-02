@@ -17,7 +17,6 @@ public class SaleService {
 	
 	public void saveSale(Sale sale) {
 		saleRepository.save(sale);
-		//TODO link to /purchaseVehicle form
 	}
 	
 	public List<Sale> getSales(){

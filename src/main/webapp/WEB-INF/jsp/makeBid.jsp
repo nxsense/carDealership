@@ -49,10 +49,10 @@
 				<h3 class="masthead-brand">Place a bid</h3>
 				<!-- NAVIGATION HEADER -->
 				<nav class="nav nav-masthead justify-content-center">
-					<a class="nav-link active" href="/home">Home</a> <a
-						class="nav-link" href="/inventory">Inventory</a> <a
-						class="nav-link" href="/bid">Bid</a> <a class="nav-link"
-						href="/transactions">Transactions</a>
+					<a class="nav-link active" href="${pageContext.request.contextPath}/home">Home</a> <a
+						class="nav-link" href="${pageContext.request.contextPath}/inventory">Inventory</a> <a
+						class="nav-link" href="${pageContext.request.contextPath}/bid">Bid</a> <a class="nav-link"
+						href="${pageContext.request.contextPath}/transactions">Transactions</a>
 				</nav>
 			</div>
 
@@ -62,7 +62,7 @@
 			<!--  USER REGISTRATION FORM -->
 			<div class="col-md-7 col-lg-8">
 				<h4 class="mb-3">Bidding Form</h4>
-				<form class="needs-validation" action="/makeBid" method="post" novalidate>
+				<form class="needs-validation" action="${pageContext.request.contextPath}/makeBid" method="post" novalidate>
 					<div class="row g-3">
 						<div class="col-sm-6">
 							<label for="firstName" class="form-label">First name</label> <input
@@ -80,26 +80,16 @@
 					</div>
 					
 					<div class="col-sm-6">
-						<label for="bidAmount" class="form-label">Bid Amount</label> <input
+						<%--@declare id="bidamount"--%><label for="bidAmount" class="form-label">Bid Amount</label> <input
 							type="text" class="form-control" id="offer" placeholder=""
 							value="" required name="offer">
 						<div class="invalid-feedback">Valid phone number is required.</div>
 					</div>
-					<a href="/makeBid"><button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button></a>
+					<a href="${pageContext.request.contextPath}/makeBid"><button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button></a>
 				</form>
 			</div>
 
 		</main>
-
-		<footer class="my-5 pt-5 text-muted text-center text-small">
-			<div class="inner">
-				   <p class="mb-1">&copy; 2022 POJO's Vehicles</p>
-				<p>
-					Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>,
-					by <a href="https://twitter.com/mdo">@mdo</a>.
-				</p>
-			</div>
-		</footer>
 	</div>
 	    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

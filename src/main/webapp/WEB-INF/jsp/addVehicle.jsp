@@ -46,10 +46,10 @@
 			<div class="inner">
 				<h3 class="masthead-brand">POJO's Dealership</h3>
 				<nav class="nav nav-masthead justify-content-center">
-					<a class="nav-link active" href="/home">Home</a> <a
-						class="nav-link" href="/inventory">Inventory</a> <a
-						class="nav-link" href="/bid">Bid</a> <a class="nav-link"
-						href="/transactions">Transactions</a>
+					<a class="nav-link active" href="${pageContext.request.contextPath}/home">Home</a> <a
+						class="nav-link" href="${pageContext.request.contextPath}/inventory">Inventory</a> <a
+						class="nav-link" href="${pageContext.request.contextPath}/bid">Bid</a> <a class="nav-link"
+						href="${pageContext.request.contextPath}/transactions">Transactions</a>
 				</nav>
 			</div>
 		</header>
@@ -138,15 +138,6 @@
 
 		</main>
 
-
-		<footer class="mastfoot mt-auto">
-			<div class="inner">
-				<p>
-					Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>,
-					by <a href="https://twitter.com/mdo">@mdo</a>.
-				</p>
-			</div>
-		</footer>
 	</div>
 
 
