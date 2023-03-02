@@ -17,7 +17,5 @@ public class CustomerService {
 		customerRepository.save(customer);
 		//links to /addCustomer form for purchase transaction
 	}
-	
-	//displayAllCustomers
-	//create this query/method in CustomerRepository Class
+
 }

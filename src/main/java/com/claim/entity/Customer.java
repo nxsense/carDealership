@@ -1,16 +1,6 @@
 package com.claim.entity;
 
-import java.util.Date;
-
-import java.util.Optional;
-
 import javax.persistence.*;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.claim.entity.Sale;
-//import com.claim.repository.SaleRepository;
-import com.claim.service.*;
 
 /*
  * CREATE TABLE customer (
@@ -31,11 +21,7 @@ public class Customer {
 	@Id
 	@Column(name = "customer_id")
 	private int customerId;
-	
-	//@OneToOne(cascade=CascadeType.ALL)
-	//@JoinColumn(name = "vin")
-	//private Vehicle vehicle;
-	
+
 	@Column(name = "purchase_price")
 	private double purchasePrice;
 	
@@ -48,9 +34,6 @@ public class Customer {
 	@Column(name = "phone_number")
 	private String phoneNumber;
 
-	//dependency injection
-	//	@Autowired
-	//	SaleRepository saleRepository;
 	
 	public Customer() {
 		

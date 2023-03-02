@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 //Added notations
 @Configuration
-@EnableJpaRepositories(basePackages="com.claim.repository")
-@EntityScan(basePackages="com.claim.entity")
-public class ApplicationConfig {
+ @EnableJpaRepositories(basePackages="com.claim.repository")
+ @EntityScan(basePackages="com.claim.entity")
+ public class ApplicationConfig {
 
 }
